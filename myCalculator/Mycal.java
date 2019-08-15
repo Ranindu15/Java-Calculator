@@ -92,16 +92,37 @@ public class Mycal {
 		frame.getContentPane().add(button_3);
 		
 		JButton btnNewButton_1 = new JButton("-");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num1.setText(num2.getText());
+				num2.setText(null);
+				Action.setText("neg");
+			}
+		});
 		btnNewButton_1.setFont(new Font("Dialog", Font.BOLD, 30));
 		btnNewButton_1.setBounds(232, 212, 125, 57);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton button_1 = new JButton("*");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num1.setText(num2.getText());
+				num2.setText(null);
+				Action.setText("mult");
+			}
+		});
 		button_1.setFont(new Font("Dialog", Font.BOLD, 30));
 		button_1.setBounds(29, 304, 125, 57);
 		frame.getContentPane().add(button_1);
 		
 		JButton button_2 = new JButton("/");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num1.setText(num2.getText());
+				num2.setText(null);
+				Action.setText("div");
+			}
+		});
 		button_2.setFont(new Font("Dialog", Font.BOLD, 30));
 		button_2.setBounds(232, 304, 125, 57);
 		frame.getContentPane().add(button_2);
@@ -195,6 +216,18 @@ public class Mycal {
 				if(Action.getText().equals("add")) {
 					num2.setText(String.valueOf(one+two));
 				}
+				else if(Action.getText().equals("neg")) {
+					num2.setText(String.valueOf(one-two));
+				}
+				else if(Action.getText().equals("mult")) {
+					num2.setText(String.valueOf(one*two));
+				}
+				else if(Action.getText().equals("div")) {
+					num2.setText(String.valueOf(one/two));
+				}
+				
+				
+				
 			}
 		});
 		button_11.setFont(new Font("Dialog", Font.BOLD, 25));
@@ -212,6 +245,14 @@ public class Mycal {
 		frame.getContentPane().add(button_12);
 		
 		JButton btnC = new JButton("C");
+		btnC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num1.setText(null);
+				num2.setText(null);
+				Action.setText(null);
+				
+			}
+		});
 		btnC.setFont(new Font("Dialog", Font.BOLD, 25));
 		btnC.setBounds(424, 291, 71, 45);
 		frame.getContentPane().add(btnC);
